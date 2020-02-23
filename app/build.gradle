@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.triplet.play'
 
 if (file('credentials.config').exists() ) {
@@ -37,6 +39,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    mavenCentral()
 }
 
 dependencies {
@@ -55,4 +58,5 @@ dependencies {
 
     //Self compiled .aar version of wishlist
     compile(name: 'lib', ext: 'aar')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
