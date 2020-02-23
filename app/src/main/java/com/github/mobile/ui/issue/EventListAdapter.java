@@ -169,7 +169,7 @@ public class EventListAdapter extends MultiTypeAdapter {
             textView(0).setTextColor(resources.getColor(R.color.issue_event_normal));
             break;
         case TimelineEvent.EVENT_REVIEW_REQUESTED:
-            message += String.format(resources.getString(R.string.issue_event_review_requested), "<b>" + event.requested_reviewer.login + "</b>");
+//            message += String.format(resources.getString(R.string.issue_event_review_requested), "<b>" + event.requested_reviewer.login + "</b>");
             setText(0, TypefaceUtils.ICON_EYE);
             textView(0).setTextColor(resources.getColor(R.color.issue_event_normal));
             break;
