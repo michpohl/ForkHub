@@ -346,5 +346,6 @@
     <string name="copy_hash">Copy hash</string>
     <string name="toast_msg_copied">Copied to clipboard</string>
     <string name="parent_repo">Parent repository</string>
+    <string name="code_owners">CODE OWNERS</string>
 
 </resources>

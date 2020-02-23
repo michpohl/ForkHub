@@ -131,14 +131,21 @@ class EventListAdapter(
                 textView(0).setTextColor(resources.getColor(R.color.issue_event_normal))
             }
             TimelineEvent.EVENT_REVIEW_REQUESTED -> {
-                //            message += String.format(resources.getString(R.string.issue_event_review_requested), "<b>" + event.requested_reviewer.login + "</b>");
+                val reviewer =
+                    event.requested_reviewer?.login ?: resources.getString(R.string.code_owners)
+                message += String.format(
+                    resources.getString(R.string.issue_event_review_requested),
+                    "<b>$reviewer</b>"
+                )
                 setText(0, TypefaceUtils.ICON_EYE)
                 textView(0).setTextColor(resources.getColor(R.color.issue_event_normal))
             }
             TimelineEvent.EVENT_REVIEW_REQUEST_REMOVED -> {
+                val reviewer =
+                    event.requested_reviewer?.login ?: resources.getString(R.string.code_owners)
                 message += String.format(
                     resources.getString(R.string.issue_event_review_request_removed),
-                    "<b>" + event.requested_reviewer.login + "</b>"
+                    "<b>$reviewer</b>"
                 )
                 setText(0, TypefaceUtils.ICON_X)
                 textView(0).setTextColor(resources.getColor(R.color.issue_event_normal))
